@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Lit Lead | Weekly Spiritual Teachings & Biblical Discipleship</title>
+  <meta name="description"
+    content="We are ON FIRE, We are BUILT DIFFERENT, We are SENT TO INFLUENCE. Stream weekly spiritual teachings from Live Lit Lead to ignite your faith, build unshakeable character, and lead culture with Kingdom authority.">
+
+  <!-- Favicon and Brand Icons -->
+  <link rel="icon" type="image/png" href="media/logo1.PNG">
+  <link rel="apple-touch-icon" href="media/logo1.PNG">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <span class="badge-fire">🔥 Weekly Drops</span>
+    <span>New spiritual teachings release weekly on YouTube. Stream live or watch on-demand.</span>
+    <a href="#videos" id="topWatchLink">Browse All 28 Teachings &rarr;</a>
+  </div>
+
+  <!-- Main Sticky Header (BibleProject Style) -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+
+      <!-- Brand Logo -->
+      <a href="#" class="brand-link" aria-label="Live Lit Lead Home">
+        <div class="brand-icon">
+          <!-- Monogram vector emblem matching media/logo1.PNG -->
+          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 10 H32 V74 H88 V90 H12 Z" fill="white" />
+            <text x="38" y="32" fill="white" font-family="'Outfit', sans-serif" font-weight="900" font-size="22"
+              letter-spacing="1">IVE</text>
+            <text x="38" y="54" fill="white" font-family="'Outfit', sans-serif" font-weight="900" font-size="22"
+              letter-spacing="1">IT</text>
+            <text x="38" y="74" fill="white" font-family="'Outfit', sans-serif" font-weight="900" font-size="21"
+              letter-spacing="0.5">EAD</text>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">LIVE LIT LEAD</span>
+          <span class="brand-tag">#LiveLitLead</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="#videos" class="nav-link active">Teachings & Videos</a></li>
+          <li><a href="#pillars" class="nav-link">Our Pillars</a></li>
+          <li><a href="#series" class="nav-link">Series</a></li>
+          <li><a href="#resources" class="nav-link">Study Guides</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="header-actions">
+        <!-- Quick Search -->
+        <button class="btn-search-trigger" id="btnQuickSearch" title="Search Teachings (Ctrl+K)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <span>Search...</span>
+          <kbd>/</kbd>
+        </button>
+
+        <!-- Admin Controls Container (Hidden for regular public, visible ONLY for authenticated Admin) -->
+        <div class="admin-header-controls" id="adminHeaderControls" style="display: none;">
+          <button class="btn-add-video" id="btnAdminAddVideo" title="Admin: Add a new YouTube Teaching">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+            <span>Admin: + Add Video</span>
+          </button>
+          <button class="btn-admin-logout" id="btnAdminLogout" title="Logout from Admin Mode">
+            <span>Logout</span>
+          </button>
+        </div>
+
+        <!-- YouTube Channel Subscribe CTA -->
+        <a href="https://www.youtube.com/watch?v=moUvlAkEhxg&list=PL0zut06BhfP_9r3hhY8JXAyug6ENy9IFE" target="_blank"
+          rel="noopener noreferrer" class="btn-subscribe" id="btnHeaderSubscribe">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+          </svg>
+          <span>YouTube Channel</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO SECTION (BibleProject Editorial Layout + Lit Energy)
+       ========================================================================== -->
+  <section class="hero-section">
+    <div class="hero-background-art"></div>
+    <div class="container hero-grid">
+
+      <!-- Left Column: Manifesto & Call to Action -->
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+          <span>Weekly Spiritual Teachings on YouTube</span>
+        </div>
+
+        <h1 class="hero-headline">
+          <span class="text-gradient-orange">WE ARE ON FIRE.</span>
+          <span class="text-white">WE ARE BUILT DIFFERENT.</span>
+          <span class="text-gradient-orange">WE ARE SENT TO INFLUENCE.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Welcome to <strong>LIVE LIT LEAD</strong>. We release weekly teachings designed to make you grow spiritually.
+          Discover how to <strong>Live Lit</strong> in holy passion, <strong>Build Lit</strong> on unshakeable biblical
+          foundations, and <strong>Lead Lit</strong> with Kingdom authority in every sphere of life.
+        </p>
+
+        <div class="hero-ctas">
+          <button class="btn-primary-play" id="heroPlayBtn" data-video-id="lll-yt-001">
+            <span class="play-circle">&#9658;</span>
+            <span>Watch Latest Teaching</span>
+          </button>
+          <a href="#videos" class="btn-secondary">
+            <span>Explore All 28 Teachings</span>
+            <span>&darr;</span>
+          </a>
+        </div>
+
+        <!-- Metric Counter / Trust Bar -->
+        <div class="hero-meta-stats">
+          <div class="stat-item">
+            <span class="stat-number">28</span>
+            <span class="stat-label">Lit Episodes</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">3 Pillars</span>
+            <span class="stat-label">Live • Build • Lead</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100% Free</span>
+            <span class="stat-label">Video & Study Notes</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: BibleProject-Style Video Spotlight Card -->
+      <div class="hero-spotlight">
+        <div class="spotlight-card" id="heroSpotlightCard" data-video-id="lll-yt-001">
+          <div class="spotlight-media">
+            <img src="https://img.youtube.com/vi/moUvlAkEhxg/hqdefault.jpg" alt="Leadership Before Title"
+              id="heroSpotlightImg">
+            <div class="spotlight-badge">🔥 EPISODE OF THE WEEK</div>
+            <div class="spotlight-duration">24:44</div>
+            <div class="spotlight-play-overlay">
+              <div class="play-button-glow">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="spotlight-info">
+            <div class="spotlight-series">Kingdom Leadership & Influence • Lit Episode 1</div>
+            <h3 class="spotlight-title">Leadership Before Title</h3>
+            <p class="spotlight-desc">Discover the biblical blueprint for true Kingdom influence. Leadership is not
+              about a title or position; it is a posture of selfless service, submission, and divine authority.</p>
+            <div class="spotlight-footer">
+              <span class="scripture-chip">📖 Mark 10:42-45</span>
+              <span style="color: var(--brand-orange); font-weight: 700;">Watch on Website &rarr;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       THE THREE PILLARS (BibleProject Explorer Block)
+       ========================================================================== */ -->
+  <section class="pillars-section" id="pillars">
+    <div class="container">
+
+      <div class="section-header">
+        <div class="section-badge">🔥 Our Foundation & Calling</div>
+        <h2 class="section-title">The Three Lit Pillars</h2>
+        <p class="section-subtitle">Everything we teach centers around these three transformative dimensions of
+          spiritual maturity.</p>
+      </div>
+
+      <div class="pillars-grid">
+
+        <!-- Pillar 1: LIVE LIT -->
+        <div class="pillar-card live-lit">
+          <div class="pillar-art">
+            <img src="media/pillar_live_lit.jpg" alt="Live Lit - Spiritual Fire">
+            <span class="pillar-motto-tag">We Are On Fire</span>
+          </div>
+          <div class="pillar-body">
+            <div class="pillar-title-wrap">
+              <h3 class="pillar-title" style="color: var(--pillar-live);">LIVE LIT</h3>
+            </div>
+            <div class="pillar-statement">Intimacy, Holy Fire & Personal Devotion</div>
+            <p class="pillar-desc">
+              Living Lit is the heartbeat of your spiritual walk. It is the secret place where you commune with God,
+              stoke the flame of holy passion, and refuse to let the fire on your altar burn out.
+            </p>
+            <ul class="pillar-features">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                Daily altar prayer and secret place intimacy
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                Communion with the Holy Spirit & discernment
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                Spiritual sensitivity and unquenchable zeal
+              </li>
+            </ul>
+            <button class="btn-pillar-filter" data-pillar-filter="live-lit">
+              <span>Browse Live Lit Teachings</span>
+              <span>&rarr;</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Pillar 2: BUILD LIT -->
+        <div class="pillar-card build-lit">
+          <div class="pillar-art">
+            <img src="media/pillar_build_lit.jpg" alt="Build Lit - Built Different">
+            <span class="pillar-motto-tag">We Are Built Different</span>
+          </div>
+          <div class="pillar-body">
+            <div class="pillar-title-wrap">
+              <h3 class="pillar-title" style="color: var(--pillar-build);">BUILD LIT</h3>
+            </div>
+            <div class="pillar-statement">Discipleship, Truth & Mental Fortitude</div>
+            <p class="pillar-desc">
+              Building Lit is about structural spiritual integrity. We forge deep biblical doctrine, renew the mind
+              against cultural conformity, and build emotional resilience that stands firm in any crisis.
+            </p>
+            <ul class="pillar-features">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                Sound biblical doctrine and systematic discipleship
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                Mind renewal (Romans 12:2) & identity in Christ
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                Character forged through discipline and trials
+              </li>
+            </ul>
+            <button class="btn-pillar-filter" data-pillar-filter="build-lit">
+              <span>Browse Build Lit Teachings</span>
+              <span>&rarr;</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Pillar 3: LEAD LIT -->
+        <div class="pillar-card lead-lit">
+          <div class="pillar-art">
+            <img src="media/pillar_lead_lit.jpg" alt="Lead Lit - Sent to Influence">
+            <span class="pillar-motto-tag">Sent to Influence</span>
+          </div>
+          <div class="pillar-body">
+            <div class="pillar-title-wrap">
+              <h3 class="pillar-title" style="color: var(--pillar-lead);">LEAD LIT</h3>
+            </div>
+            <div class="pillar-statement">Marketplace Leadership & Cultural Dominion</div>
+            <p class="pillar-desc">
+              Leading Lit is your external commission. As a city set on a hill, you are anointed to lead with
+              excellence, integrity, and boldness in the marketplace, tech, education, business, and ministry.
+            </p>
+            <ul class="pillar-features">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                Marketplace apostleship & professional mastery
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                Uncompromising courage in hostile environments
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                Discipling culture and pioneering Kingdom solutions
+              </li>
+            </ul>
+            <button class="btn-pillar-filter" data-pillar-filter="lead-lit">
+              <span>Browse Lead Lit Teachings</span>
+              <span>&rarr;</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       THE SIGNATURE VIDEO EXPLORER (Modeled after BibleProject.com Videos)
+       ========================================================================== -->
+  <section class="videos-section" id="videos">
+    <div class="container">
+
+      <!-- Explorer Header -->
+      <div class="explorer-header">
+        <div class="explorer-title-row">
+          <div class="explorer-headings">
+            <div class="section-badge">📺 Complete Library</div>
+            <h2>Explore Teachings & Series</h2>
+            <p>Watch our weekly video teachings on the website with integrated study notes, scriptures, and actionable
+              challenges.</p>
+          </div>
+        </div>
+
+        <!-- BibleProject Filter Toolbar -->
+        <div class="explorer-toolbar">
+
+          <div class="toolbar-top">
+            <!-- Search bar -->
+            <div class="search-box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" id="videoSearchInput" class="search-input"
+                placeholder="Search teachings by topic, title, scripture (e.g. Prayer, Fire, Secret Place)...">
+              <button class="search-clear" id="searchClearBtn" title="Clear search">&times;</button>
+            </div>
+
+            <!-- Series & Sort Controls -->
+            <div class="toolbar-controls">
+              <!-- Series dropdown -->
+              <div class="select-wrapper">
+                <select id="seriesFilterSelect" class="select-filter" aria-label="Filter by series">
+                  <option value="all">All Series</option>
+                  <option value="Altar Fire & The Secret Place">Altar Fire & The Secret Place</option>
+                  <option value="Kingdom Leadership & Influence">Kingdom Leadership & Influence</option>
+                  <option value="Character & Sonship">Character & Sonship</option>
+                  <option value="Spiritual Discernment & Mind Renewal">Spiritual Discernment & Mind Renewal</option>
+                </select>
+                <span class="select-arrow">&#9662;</span>
+              </div>
+
+              <!-- Sort dropdown -->
+              <div class="select-wrapper">
+                <select id="sortSelect" class="select-filter" aria-label="Sort videos">
+                  <option value="latest">Latest First</option>
+                  <option value="popular">Most Viewed</option>
+                  <option value="duration">Longest</option>
+                </select>
+                <span class="select-arrow">&#9662;</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pillar category pills (BibleProject navigation pattern) -->
+          <div class="pillar-tabs" id="pillarTabs">
+            <button class="pillar-tab-btn active" data-pillar="all">All Teachings (28)</button>
+            <button class="pillar-tab-btn" data-pillar="live-lit">🔥 Live Lit (Spiritual Fire)</button>
+            <button class="pillar-tab-btn" data-pillar="build-lit">🛡️ Build Lit (Foundations)</button>
+            <button class="pillar-tab-btn" data-pillar="lead-lit">👑 Lead Lit (Influence)</button>
+          </div>
+
+        </div>
+
+        <!-- Explorer Status Bar -->
+        <div class="explorer-status-bar">
+          <div class="status-count" id="videoCountDisplay">Showing <strong>28</strong> spiritual teachings</div>
+          <button class="btn-reset-filters" id="btnResetFilters">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+              <path d="M3 3v5h5" />
+            </svg>
+            <span>Reset filters</span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Video Cards Grid -->
+      <div class="video-grid" id="videoGrid">
+        <!-- Rendered dynamically by js/app.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FEATURED SERIES SHOWCASE (BibleProject Style)
+       ========================================================================== -->
+  <section class="series-banner-section" id="series">
+    <div class="container">
+      <div class="series-banner">
+
+        <div class="series-info">
+          <div class="series-pill">🔥 Signature Collection • Lit Episodes</div>
+          <h2 class="series-title">Altar Fire & The Secret Place</h2>
+          <p class="series-desc">
+            A transformational series examining the mystery of keeping the spiritual flame continually burning on the
+            altar. Discover how to cultivate unshakeable secret place communion, overcome spiritual dryness, silence
+            distractions, and sustain God's fire for a lifetime.
+          </p>
+          <div class="series-actions">
+            <button class="btn-primary-play" id="btnStartSeries" data-video-id="lll-yt-003">
+              <span class="play-circle">&#9658;</span>
+              <span>Watch Prayer Life Teaching</span>
+            </button>
+            <button class="btn-secondary" id="btnSeriesFilterJump">
+              <span>Filter This Series</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="series-preview-box">
+          <h4>Episodes in this Collection</h4>
+          <ul class="series-episode-list">
+            <li class="series-episode-item" data-video-id="lll-yt-003">
+              <div>
+                <span class="ep-num">01.</span>
+                <span>Building an Unshakable Prayer Life</span>
+              </div>
+              <span class="playlist-duration">34:31</span>
+            </li>
+            <li class="series-episode-item" data-video-id="lll-yt-015">
+              <div>
+                <span class="ep-num">02.</span>
+                <span>The Power of the Secret Place</span>
+              </div>
+              <span class="playlist-duration">35:31</span>
+            </li>
+            <li class="series-episode-item" data-video-id="lll-yt-017">
+              <div>
+                <span class="ep-num">03.</span>
+                <span>Sustaining Fire for a Lifetime</span>
+              </div>
+              <span class="playlist-duration">23:35</span>
+            </li>
+            <li class="series-episode-item" data-video-id="lll-yt-027">
+              <div>
+                <span class="ep-num">04.</span>
+                <span>How Fire Starts</span>
+              </div>
+              <span class="playlist-duration">30:52</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       BRAND IDENTITY & LOGO SHOWCASE (Featuring media/logo1.PNG & logo2.PNG)
+       ========================================================================== -->
+  <section class="brand-identity-section" id="about">
+    <div class="container">
+      <div class="brand-grid">
+
+        <div class="brand-story">
+          <div class="section-badge">🔥 The Identity</div>
+          <h2>Forged In Fire. Built On The Rock.</h2>
+          <div class="brand-quote-box">
+            "We are ON FIRE, We are BUILT DIFFERENT, We are SENT TO INFLUENCE."
+          </div>
+          <p style="color: var(--text-secondary); line-height: 1.7;">
+            The <strong>LIVE LIT LEAD</strong> visual identity was crafted with intentional theological symbolism. The
+            interlocking L's form a unified, fortress-like foundation—symbolizing that believers who <em>Live Lit</em>
+            in private communion are supernaturally equipped to <em>Build Lit</em> on unshakeable biblical truth and
+            <em>Lead Lit</em> with fearless Kingdom authority.
+          </p>
+          <p style="color: var(--text-secondary); line-height: 1.7;">
+            The vibrant <strong>Blaze Orange</strong> represents the holy fire of the Holy Spirit on the altar
+            (Leviticus 6:13), while the deep <strong>Obsidian Charcoal</strong> represents the enduring stone
+            foundations that weather every storm.
+          </p>
+          <div>
+            <a href="https://www.youtube.com/watch?v=moUvlAkEhxg&list=PL0zut06BhfP_9r3hhY8JXAyug6ENy9IFE"
+              target="_blank" rel="noopener noreferrer" class="btn-primary-play">
+              <span>Join the YouTube Movement</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="brand-assets-preview">
+          <!-- Logo 1 (Dark Theme) -->
+          <div class="brand-card-preview">
+            <img src="media/logo1.PNG" alt="Live Lit Lead Dark Brand Logo">
+            <div class="brand-card-caption">The Altar Fire Edition</div>
+          </div>
+          <!-- Logo 2 (Orange Theme) -->
+          <div class="brand-card-preview">
+            <img src="media/logo2.PNG" alt="Live Lit Lead Vibrant Orange Brand Logo">
+            <div class="brand-card-caption">The Blaze Ember Edition</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       STUDY GUIDES & SPIRITUAL RESOURCES (BibleProject Classroom/Guides Style)
+       ========================================================================== -->
+  <section class="resources-section" id="resources">
+    <div class="container">
+
+      <div class="section-header">
+        <div class="section-badge">📖 Free Downloads</div>
+        <h2 class="section-title">Weekly Study Guides & Outlines</h2>
+        <p class="section-subtitle">Every teaching comes with companion notes, scripture memory verses, and reflection
+          questions.</p>
+      </div>
+
+      <div class="resources-grid">
+
+        <div class="resource-card">
+          <div class="resource-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+          </div>
+          <h3 class="resource-title">Altar Fire Study Guide</h3>
+          <p class="resource-desc">Complete curriculum exploring Leviticus 6:13, the fire on the altar, and personal
+            secret place protocols.</p>
+          <a href="#videos" class="resource-download-link"
+            onclick="window.LLLVideos && window.appOpenStudyGuide('lll-yt-003'); return false;">
+            <span>View Teaching Notes</span>
+            <span>&rarr;</span>
+          </a>
+        </div>
+
+        <div class="resource-card">
+          <div class="resource-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+          </div>
+          <h3 class="resource-title">Built Different: Mind Renewal</h3>
+          <p class="resource-desc">Framework for taking thoughts captive, emotional stability, and establishing
+            unshakeable spiritual peace.</p>
+          <a href="#videos" class="resource-download-link"
+            onclick="window.LLLVideos && window.appOpenStudyGuide('lll-yt-005'); return false;">
+            <span>View Teaching Notes</span>
+            <span>&rarr;</span>
+          </a>
+        </div>
+
+        <div class="resource-card">
+          <div class="resource-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+              </path>
+            </svg>
+          </div>
+          <h3 class="resource-title">Marketplace Leadership Blueprint</h3>
+          <p class="resource-desc">Action guide for operating in Kingdom authority, handling leadership before title,
+            and discipling culture.</p>
+          <a href="#videos" class="resource-download-link"
+            onclick="window.LLLVideos && window.appOpenStudyGuide('lll-yt-001'); return false;">
+            <span>View Teaching Notes</span>
+            <span>&rarr;</span>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       NEWSLETTER & WEEKLY DROP SIGNUP
+       ========================================================================== -->
+  <section class="newsletter-section">
+    <div class="container">
+      <div class="newsletter-box">
+        <div class="section-badge">🔥 Never Miss A Teaching</div>
+        <h2>Join The Weekly Lit Drop</h2>
+        <p>Get the new Sunday teaching, full study notes, and the weekly Lit Challenge delivered directly to your inbox
+          every week.</p>
+
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" class="newsletter-input" placeholder="Enter your email address..." required
+            id="newsletterEmail">
+          <button type="submit" class="btn-newsletter-submit">Subscribe Now</button>
+        </form>
+        <span class="newsletter-privacy">100% free spiritual resources. No spam. Unsubscribe anytime.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       MEGA FOOTER (BibleProject Layout)
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+
+      <div class="footer-top">
+
+        <div class="footer-brand">
+          <div class="footer-brand-title">LIVE LIT LEAD</div>
+          <p class="footer-tagline">
+            We are ON FIRE, We are BUILT DIFFERENT, We are SENT TO INFLUENCE. Weekly spiritual teachings to awaken
+            believers and reform culture.
+          </p>
+          <div class="social-links">
+            <a href="https://www.youtube.com/watch?v=moUvlAkEhxg&list=PL0zut06BhfP_9r3hhY8JXAyug6ENy9IFE"
+              target="_blank" rel="noopener noreferrer" class="social-btn" title="YouTube Channel">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn"
+              title="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="TikTok">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z" />
+              </svg>
+            </a>
+            <a href="https://spotify.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="Podcast">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Watch & Learn</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#videos" data-pillar-filter="all">All Teachings (28)</a></li>
+            <li><a href="#videos" data-pillar-filter="live-lit">Live Lit Series</a></li>
+            <li><a href="#videos" data-pillar-filter="build-lit">Build Lit Series</a></li>
+            <li><a href="#videos" data-pillar-filter="lead-lit">Lead Lit Series</a></li>
+            <li><a href="#series">Featured Playlists</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>The Movement</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#pillars">The 3 Pillars</a></li>
+            <li><a href="#about">The Brand Story</a></li>
+            <li><a href="#resources">Study Guides & Outlines</a></li>
+            <li><a href="https://www.youtube.com/watch?v=moUvlAkEhxg&list=PL0zut06BhfP_9r3hhY8JXAyug6ENy9IFE"
+                target="_blank" rel="noopener noreferrer">YouTube Channel</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Admin & Portal</h4>
+          <ul class="footer-nav-list">
+            <li><a href="javascript:void(0)" onclick="document.getElementById('newsletterEmail').focus()">Subscribe to
+                Drops</a></li>
+            <li><a href="javascript:void(0)" id="btnOpenAdminLogin">Admin Login 🔒</a></li>
+            <li><a href="javascript:void(0)" id="btnResetAllData">Restore Playlist Defaults</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Live Lit Lead. All rights reserved. On Fire. Built Different. Sent to Influence.</div>
+        <button class="back-to-top" id="btnBackToTop">
+          <span>Back to top</span>
+          <span>&uarr;</span>
+        </button>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       CINEMA THEATER VIDEO MODAL (Modern <dialog> with YouTube Iframe)
+       ========================================================================== -->
+  <dialog class="video-modal" id="videoModal">
+    <div class="modal-cinema-box">
+
+      <!-- Top modal header -->
+      <div class="modal-header-bar">
+        <div class="modal-header-info">
+          <span class="modal-pillar-chip badge-lead-lit" id="modalPillarChip">Lead Lit</span>
+          <span class="modal-series-name" id="modalSeriesName">Kingdom Leadership & Influence</span>
+        </div>
+        <button class="btn-close-modal" id="btnCloseModal" title="Close (Esc)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- YouTube Iframe 16:9 Player Container -->
+      <div class="modal-player-wrap">
+        <iframe id="modalYoutubeIframe" src="" title="Live Lit Lead YouTube Video Player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+
+      <!-- Video Details & Tabs Below Player -->
+      <div class="modal-body-content">
+
+        <h2 class="modal-video-title" id="modalVideoTitle">Leadership Before Title</h2>
+
+        <div class="modal-video-meta">
+          <div class="meta-left">
+            <span id="modalVideoDate">Week 28, 2026</span>
+            <span>&bull;</span>
+            <span id="modalVideoDuration">24:44</span>
+            <span>&bull;</span>
+            <span id="modalVideoScripture" class="scripture-chip">📖 Mark 10:42-45</span>
+          </div>
+          <div class="meta-right">
+            <button class="btn-modal-action" id="btnShareVideo">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="18" cy="5" r="3"></circle>
+                <circle cx="6" cy="12" r="3"></circle>
+                <circle cx="18" cy="19" r="3"></circle>
+                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+              </svg>
+              <span>Share</span>
+            </button>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="btn-modal-action primary-yt" id="modalYtLink">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+              <span>Watch on YouTube ↗</span>
+            </a>
+          </div>
+        </div>
+
+        <p id="modalVideoDesc" style="color: var(--text-secondary); line-height: 1.6; font-size: 0.98rem;"></p>
+
+        <!-- Interactive Tabs (BibleProject Style Study Notes) -->
+        <div class="modal-tabs">
+          <button class="modal-tab-btn active" id="tabBtnNotes" data-modal-tab="notes">📖 Study Notes &
+            Scriptures</button>
+          <button class="modal-tab-btn" id="tabBtnPlaylist" data-modal-tab="playlist">📺 Up Next In Series</button>
+        </div>
+
+        <!-- Tab 1: Study Notes -->
+        <div class="modal-tab-panel active" id="tabPanelNotes">
+          <div class="study-notes-block">
+
+            <div>
+              <h4 class="study-section-title">Key Spiritual Takeaways</h4>
+              <ul class="takeaways-list" id="modalTakeawaysList">
+                <!-- Dynamically populated -->
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="study-section-title">Scripture References</h4>
+              <div id="modalScripturesContainer">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
+
+            <div class="lit-challenge-box">
+              <h4>🔥 The Lit Challenge for This Week</h4>
+              <p id="modalChallengeText"></p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Tab 2: Up Next Playlist -->
+        <div class="modal-tab-panel" id="tabPanelPlaylist">
+          <div class="playlist-grid" id="modalPlaylistContainer">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </dialog>
+
+  <!-- ==========================================================================
+       ADMIN PASSCODE AUTHENTICATION MODAL
+       ========================================================================== -->
+  <dialog class="add-video-modal" id="adminLoginModal">
+    <div class="add-modal-box" style="max-width: 440px;">
+
+      <div class="add-modal-header">
+        <h3 class="add-modal-title">Admin Authentication</h3>
+        <button class="btn-close-modal" id="btnCloseAdminLoginModal" title="Close">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <form id="adminLoginForm" class="add-form">
+        <div class="form-group">
+          <label for="adminPasscodeInput">Enter Admin PIN or Passcode</label>
+          <input type="password" id="adminPasscodeInput" class="form-input" placeholder="Enter PIN (Default: 777)"
+            required autofocus>
+          <span style="font-size: 0.76rem; color: var(--text-muted);">Only administrators can integrate or manage
+            YouTube video links.</span>
+        </div>
+        <div class="add-form-actions">
+          <button type="button" class="btn-secondary" id="btnCancelAdminLogin">Cancel</button>
+          <button type="submit" class="btn-primary-play" style="padding: 10px 22px;">
+            <span>Unlock Admin Access</span>
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </dialog>
+
+  <!-- ==========================================================================
+       ADD YOUTUBE VIDEO MODAL (Accessible ONLY for Authenticated Admin)
+       ========================================================================== -->
+  <dialog class="add-video-modal" id="addVideoModal">
+    <div class="add-modal-box">
+
+      <div class="add-modal-header">
+        <h3 class="add-modal-title">Admin: Integrate a YouTube Video</h3>
+        <button class="btn-close-modal" id="btnCloseAddModal" title="Close">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <form class="add-form" id="addVideoForm">
+
+        <div class="form-group">
+          <label for="inputYtUrl">YouTube Video Link or ID *</label>
+          <input type="text" id="inputYtUrl" class="form-input"
+            placeholder="Paste link: https://www.youtube.com/watch?v=... or https://youtu.be/..." required>
+          <span style="font-size: 0.75rem; color: var(--text-muted);">Supports standard YouTube links, Shorts,
+            playlists, or 11-digit Video IDs.</span>
+        </div>
+
+        <!-- Live Thumbnail Preview -->
+        <div class="form-group">
+          <label>Video Thumbnail Preview</label>
+          <div class="preview-thumb-box" id="previewThumbBox">
+            <span class="preview-placeholder-text" id="previewPlaceholderText">Paste a valid YouTube link above to
+              preview thumbnail</span>
+            <img src="" alt="Thumbnail Preview" id="previewThumbImg">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputVideoTitle">Teaching Title *</label>
+          <input type="text" id="inputVideoTitle" class="form-input" placeholder="e.g. Walking in Supernatural Zeal"
+            required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="selectPillar">Core Pillar *</label>
+            <select id="selectPillar" class="form-select" required>
+              <option value="live-lit">Live Lit (Spiritual Fire & Prayer)</option>
+              <option value="build-lit">Build Lit (Mind Renewal & Doctrine)</option>
+              <option value="lead-lit">Lead Lit (Marketplace & Influence)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="inputSeries">Series Name</label>
+            <input type="text" id="inputSeries" class="form-input" placeholder="e.g. Altar Fire & The Secret Place">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="inputDuration">Duration (MM:SS)</label>
+            <input type="text" id="inputDuration" class="form-input" placeholder="e.g. 28:30">
+          </div>
+          <div class="form-group">
+            <label for="inputScripture">Primary Scripture</label>
+            <input type="text" id="inputScripture" class="form-input" placeholder="e.g. Romans 12:1-2">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputDesc">Description & Summary</label>
+          <textarea id="inputDesc" class="form-textarea" rows="3"
+            placeholder="Brief summary of what believers will learn from this teaching..."></textarea>
+        </div>
+
+        <div class="add-form-actions">
+          <button type="button" class="btn-secondary" id="btnCancelAddModal">Cancel</button>
+          <button type="submit" class="btn-primary-play" style="padding: 10px 24px;">
+            <span>Add Video to Website</span>
+          </button>
+        </div>
+
+      </form>
+
+    </div>
+  </dialog>
+
+  <!-- Quick Search Modal (Ctrl+K or /) -->
+  <dialog class="add-video-modal" id="searchModal">
+    <div class="add-modal-box" style="max-width: 540px;">
+      <div class="add-modal-header" style="margin-bottom: 16px;">
+        <h3 class="add-modal-title">Quick Search Teachings</h3>
+        <button class="btn-close-modal" id="btnCloseSearchModal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="form-group">
+        <input type="text" id="modalSearchInput" class="form-input" placeholder="Type a topic, scripture, or pillar..."
+          autofocus>
+      </div>
+      <div id="modalSearchResults"
+        style="max-height: 320px; overflow-y: auto; margin-top: 14px; display: flex; flex-direction: column; gap: 8px;">
+        <!-- Dynamically populated results -->
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Scripts -->
+  <script src="js/videos.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>
