@@ -29,41 +29,44 @@
     href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
 
-  <!-- Main Stylesheet -->
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body data-page="videos">
 
-  <!-- ==========================================================================
-       TOP ANNOUNCEMENT BAR (Global Notification)
-       ========================================================================== -->
-  <div class="announcement-bar" role="region" aria-label="Announcement">
-    <div class="container announcement-inner">
-      <div class="announcement-left">
-        <span class="badge-fire">
-          <svg class="icon icon-fire" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
-          <span>WEEKLY DROPS</span>
-        </span>
-        <span class="announcement-text">Explore the full library of 28+ transformative video teachings</span>
-      </div>
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="announcement-inner">
+      <span class="badge-fire">
+        <svg class="icon icon-fire" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+        <span>Weekly Drops</span>
+      </span>
+      <span class="announcement-text">Explore the full library of 28+ transformative video teachings. Stream or study on-demand.</span>
       <a href="index.html" class="announcement-link">
         <span>Back to Home</span>
-        <svg class="icon icon-right" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        <svg class="icon icon-right" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
       </a>
     </div>
   </div>
 
-  <!-- ==========================================================================
-       STICKY GLOBAL HEADER
-       ========================================================================== -->
+  <!-- Main Sticky Header (BibleProject Style) -->
   <header class="site-header" id="siteHeader">
     <div class="container header-inner">
 
       <!-- Brand Logo -->
-      <a href="index.html" class="brand-logo" aria-label="Live Lit Lead Home">
-        <div class="brand-icon-wrap">
-          <img src="media/logo1.PNG" alt="Live Lit Lead Logo" class="brand-icon">
+      <a href="index.html" class="brand-link" aria-label="Live Lit Lead Home">
+        <div class="brand-icon">
+          <!-- Monogram vector emblem matching media/logo1.PNG -->
+          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 10 H32 V74 H88 V90 H12 Z" fill="white" />
+            <text x="38" y="32" fill="white" font-family="'Outfit', sans-serif" font-weight="900" font-size="22"
+              letter-spacing="1">IVE</text>
+            <text x="38" y="54" fill="white" font-family="'Outfit', sans-serif" font-weight="900" font-size="22"
+              letter-spacing="1">IT</text>
+            <text x="38" y="74" fill="white" font-family="'Outfit', sans-serif" font-weight="900" font-size="21"
+              letter-spacing="0.5">EAD</text>
+          </svg>
         </div>
         <div class="brand-text">
           <span class="brand-title">LIVE LIT LEAD</span>
@@ -73,7 +76,7 @@
 
       <!-- Desktop Navigation Menu -->
       <nav class="desktop-nav" aria-label="Main Navigation">
-        <ul class="nav-list">
+        <ul class="nav-menu">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="videos.html" class="nav-link active">Teachings &amp; Videos</a></li>
           <li><a href="index.html#pillars" class="nav-link">Our Pillars</a></li>
@@ -96,7 +99,7 @@
           <kbd>/</kbd>
         </button>
 
-        <!-- Admin Controls Container -->
+        <!-- Admin Controls Container (Hidden for regular public, visible ONLY for authenticated Admin) -->
         <div class="admin-header-controls" id="adminHeaderControls" style="display: none;">
           <button class="btn-add-video" id="btnAdminAddVideo" title="Admin: Add a new YouTube Teaching">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
@@ -232,7 +235,7 @@
   </section>
 
   <!-- ==========================================================================
-       THE SIGNATURE VIDEO EXPLORER (Full Archive: All Videos)
+       THE SIGNATURE VIDEO EXPLORER (Full Archive: All 28+ Videos)
        ========================================================================== -->
   <section class="videos-section" id="videos" style="padding-top: 40px;">
     <div class="container">
@@ -329,336 +332,42 @@
   </section>
 
   <!-- ==========================================================================
-       THE SIGNATURE IN-WEBSITE CINEMA THEATER MODAL
-       ========================================================================== -->
-  <dialog class="video-cinema-modal" id="videoModal" aria-label="Teaching Video Player">
-    <div class="modal-dialog-content">
-
-      <!-- Modal Close Button -->
-      <button class="modal-close-btn" id="btnCloseModal" aria-label="Close Video Player">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
-
-      <!-- Video Player Frame Area -->
-      <div class="modal-player-viewport">
-        <div class="player-iframe-container">
-          <iframe id="modalYoutubeIframe" src="" title="Teaching Video Player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
-        </div>
-      </div>
-
-      <!-- Interactive Teaching Companion Area -->
-      <div class="modal-companion-viewport">
-
-        <!-- Top Overview Header -->
-        <div class="modal-meta-header">
-          <div class="modal-badge-row">
-            <span class="modal-pillar-chip" id="modalPillarChip">Live Lit</span>
-            <span class="modal-series-name" id="modalSeriesName">Altar Fire &amp; The Secret Place</span>
-          </div>
-          <h2 class="modal-video-title" id="modalVideoTitle">Loading Teaching...</h2>
-          <div class="modal-info-stats">
-            <span id="modalVideoDate">Episode</span>
-            <span>•</span>
-            <span id="modalVideoDuration">Duration</span>
-            <span>•</span>
-            <span class="scripture-badge" id="modalVideoScripture">
-              <svg class="icon icon-book" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-              <span>Scripture</span>
-            </span>
-          </div>
-          <div class="modal-action-bar">
-            <a href="#" target="_blank" rel="noopener noreferrer" class="btn-modal-yt" id="modalYtLink">
-              <span>Watch on YouTube</span>
-              <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
-            </a>
-            <button class="btn-modal-share" id="btnShareVideo">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="18" cy="5" r="3" />
-                <circle cx="6" cy="12" r="3" />
-                <circle cx="18" cy="19" r="3" />
-                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
-                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
-              </svg>
-              <span>Share Link</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Tabbed Companion Content -->
-        <div class="modal-tabs-nav">
-          <button class="modal-tab-btn active" id="tabBtnNotes" data-target-tab="notes">
-            <svg class="icon icon-book" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-            <span>Core Study Guide</span>
-          </button>
-          <button class="modal-tab-btn" id="tabBtnPlaylist" data-target-tab="playlist">
-            <svg class="icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="15" x="2" y="7" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></svg>
-            <span>Series Playlist</span>
-          </button>
-        </div>
-
-        <div class="modal-body-content">
-
-          <!-- Tab 1: Integrated Notes & Scriptures -->
-          <div class="tab-panel active" id="tabPanelNotes">
-            <div class="teaching-overview-box">
-              <h4>Teaching Summary</h4>
-              <p id="modalVideoDesc">Description here...</p>
-            </div>
-
-            <div class="key-takeaways-section">
-              <h4>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="9 11 12 14 22 4"></polyline>
-                  <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
-                </svg>
-                Core Transformational Takeaways
-              </h4>
-              <ul class="takeaways-list" id="modalTakeawaysList">
-                <!-- Dynamically rendered -->
-              </ul>
-            </div>
-
-            <div class="scripture-anchors-section">
-              <h4>
-                <svg class="icon icon-book" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                Scripture Anchors &amp; Passages
-              </h4>
-              <div class="scriptures-container" id="modalScripturesContainer">
-                <!-- Dynamically rendered -->
-              </div>
-            </div>
-
-            <div class="challenge-box">
-              <div class="challenge-header">
-                <svg class="icon icon-fire" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
-                <span>THIS WEEK'S LIT CHALLENGE</span>
-              </div>
-              <p id="modalChallengeText">Challenge...</p>
-            </div>
-          </div>
-
-          <!-- Tab 2: Series Playlist -->
-          <div class="tab-panel" id="tabPanelPlaylist">
-            <div class="playlist-header">
-              <span id="playlistCount">Episodes in this Collection</span>
-            </div>
-            <div class="playlist-items-list" id="modalPlaylistContainer">
-              <!-- Dynamically populated -->
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-  </dialog>
-
-  <!-- ==========================================================================
-       QUICK SEARCH MODAL (Triggered by / or Ctrl+K or Search Button)
-       ========================================================================== -->
-  <dialog class="search-modal" id="searchModal" aria-label="Search Video Teachings">
-    <div class="search-modal-content">
-      <div class="search-modal-header">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-        <input type="text" id="modalSearchInput" class="modal-search-input"
-          placeholder="Type to search all 28 teachings by topic, scripture, series...">
-        <button class="search-modal-close" id="btnCloseSearchModal" aria-label="Close search">
-          <svg class="icon icon-close" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-        </button>
-      </div>
-      <div class="modal-search-results" id="modalSearchResults">
-        <!-- Rendered results -->
-      </div>
-    </div>
-  </dialog>
-
-  <!-- ==========================================================================
-       ADMIN PASSCODE LOGIN MODAL (Protected with 777 or lit777)
-       ========================================================================== -->
-  <dialog class="admin-modal" id="adminLoginModal" aria-label="Admin Access Portal">
-    <div class="admin-modal-content">
-      <div class="admin-modal-header">
-        <div class="admin-shield-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
-            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-          </svg>
-        </div>
-        <h3 class="admin-modal-title">Live Lit Lead • Admin Portal</h3>
-        <p class="admin-modal-subtitle">Enter administrator passcode to add new YouTube teachings.</p>
-        <button class="modal-close-icon" id="btnCloseAdminLoginModal" aria-label="Close modal">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
-      </div>
-      <form class="admin-form" id="adminLoginForm">
-        <div class="form-group">
-          <label for="adminPasscodeInput">Admin Passcode</label>
-          <input type="password" id="adminPasscodeInput" class="form-input" placeholder="Enter passcode (e.g. 777)"
-            required autocomplete="current-password">
-        </div>
-        <div class="form-actions">
-          <button type="button" class="btn-cancel" id="btnCancelAdminLogin">Cancel</button>
-          <button type="submit" class="btn-submit">Authenticate</button>
-        </div>
-      </form>
-    </div>
-  </dialog>
-
-  <!-- ==========================================================================
-       ADMIN ADD VIDEO MODAL
-       ========================================================================== -->
-  <dialog class="admin-modal modal-wide" id="addVideoModal" aria-label="Add New YouTube Teaching">
-    <div class="admin-modal-content">
-      <div class="admin-modal-header">
-        <div class="admin-shield-icon" style="background: rgba(232, 80, 30, 0.15); color: var(--brand-orange);">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path
-              d="m22 8-6 4 6 4V8Z" />
-            <rect width="14" height="12" x="2" y="6" rx="2" />
-          </svg>
-        </div>
-        <h3 class="admin-modal-title">Add YouTube Teaching</h3>
-        <p class="admin-modal-subtitle">Paste a YouTube URL to automatically fetch its thumbnail and configure teaching notes.</p>
-        <button class="modal-close-icon" id="btnCloseAddModal" aria-label="Close modal">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
-      </div>
-      <form class="admin-form" id="addVideoForm">
-        <div class="form-grid">
-          <div class="form-group full-width">
-            <label for="inputYtUrl">YouTube Video URL or Video ID *</label>
-            <input type="text" id="inputYtUrl" class="form-input"
-              placeholder="https://www.youtube.com/watch?v=... or Video ID" required>
-            <span class="field-hint">Supports full youtube.com/watch?v=, youtu.be/, or 11-character video IDs.</span>
-          </div>
-
-          <div class="form-group full-width">
-            <label>Thumbnail Auto-Preview</label>
-            <div class="thumb-preview-box" id="thumbPreviewBox">
-              <img id="previewThumbImg" src="" alt="Thumbnail preview" style="display: none;">
-              <span id="previewPlaceholderText" style="color: var(--text-muted); font-size: 0.85rem;">Enter a valid YouTube URL to preview the HD thumbnail</span>
-            </div>
-          </div>
-
-          <div class="form-group full-width">
-            <label for="inputVideoTitle">Teaching Title *</label>
-            <input type="text" id="inputVideoTitle" class="form-input" placeholder="e.g. The Mystery of the Inner Altar" required>
-          </div>
-
-          <div class="form-group">
-            <label for="selectPillar">Pillar Category *</label>
-            <select id="selectPillar" class="form-select" required>
-              <option value="live-lit">Live Lit (Spiritual Fire)</option>
-              <option value="build-lit">Build Lit (Foundations &amp; Discipleship)</option>
-              <option value="lead-lit">Lead Lit (Marketplace Leadership)</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="selectSeries">Series / Collection</label>
-            <input type="text" id="selectSeries" class="form-input" list="seriesList" placeholder="e.g. Altar Fire & The Secret Place">
-            <datalist id="seriesList">
-              <option value="Altar Fire & The Secret Place">
-              <option value="Kingdom Leadership & Influence">
-              <option value="Character & Sonship">
-              <option value="Spiritual Discernment & Mind Renewal">
-            </datalist>
-          </div>
-
-          <div class="form-group">
-            <label for="inputScripture">Anchor Scripture Ref</label>
-            <input type="text" id="inputScripture" class="form-input" placeholder="e.g. Leviticus 6:12-13">
-          </div>
-
-          <div class="form-group">
-            <label for="inputDuration">Estimated Duration</label>
-            <input type="text" id="inputDuration" class="form-input" placeholder="e.g. 35:20">
-          </div>
-
-          <div class="form-group full-width">
-            <label for="inputDesc">Teaching Summary / Description *</label>
-            <textarea id="inputDesc" class="form-textarea" rows="3"
-              placeholder="Summarize the core biblical insights of this teaching..." required></textarea>
-          </div>
-
-          <div class="form-group full-width">
-            <label for="inputTakeaways">Key Takeaways (one per line)</label>
-            <textarea id="inputTakeaways" class="form-textarea" rows="3"
-              placeholder="Fire requires continuous wood of obedience&#10;Solitude precedes public spiritual power&#10;Prayer without holiness is noise"></textarea>
-          </div>
-
-          <div class="form-group full-width">
-            <label for="inputChallenge">Weekly Lit Challenge</label>
-            <input type="text" id="inputChallenge" class="form-input"
-              placeholder="e.g. Spend 30 uninterrupted minutes at your secret place altar every morning.">
-          </div>
-        </div>
-
-        <div class="form-actions">
-          <button type="button" class="btn-cancel" id="btnCancelAddModal">Cancel</button>
-          <button type="submit" class="btn-submit">Publish Video Teaching</button>
-        </div>
-      </form>
-    </div>
-  </dialog>
-
-  <!-- ==========================================================================
-       TOAST NOTIFICATION CONTAINER
-       ========================================================================== -->
-  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
-
-  <!-- ==========================================================================
-       GLOBAL FOOTER
+       MEGA FOOTER (Exact Match with index.html)
        ========================================================================== -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-top-grid">
 
-        <div class="footer-brand-col">
-          <a href="index.html" class="brand-logo footer-logo">
-            <div class="brand-icon-wrap">
-              <img src="media/logo1.PNG" alt="Live Lit Lead" class="brand-icon">
-            </div>
-            <div class="brand-text">
-              <span class="brand-title">LIVE LIT LEAD</span>
-              <span class="brand-tag">#LiveLitLead</span>
-            </div>
-          </a>
-          <p class="footer-manifesto">
-            We are on fire. We are built different. We are sent to influence. A weekly biblical teaching movement
-            equipping young believers and leaders to carry spiritual fire into culture and the marketplace.
+      <div class="footer-top">
+
+        <div class="footer-brand">
+          <div class="footer-brand-title">LIVE LIT LEAD</div>
+          <p class="footer-tagline">
+            We are ON FIRE, We are BUILT DIFFERENT, We are SENT TO INFLUENCE. Weekly spiritual teachings to awaken
+            believers and reform culture.
           </p>
-          <div class="footer-social-links">
+          <div class="social-links">
             <a href="https://www.youtube.com/watch?v=moUvlAkEhxg&list=PL0zut06BhfP_9r3hhY8JXAyug6ENy9IFE"
-              target="_blank" rel="noopener noreferrer" aria-label="YouTube Channel">
+              target="_blank" rel="noopener noreferrer" class="social-btn" title="YouTube Channel">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                 <path
                   d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
               </svg>
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn"
+              title="Instagram">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
               </svg>
             </a>
-            <a href="https://spotify.com" target="_blank" rel="noopener noreferrer" aria-label="Spotify Podcast">
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="TikTok">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z" />
+              </svg>
+            </a>
+            <a href="https://spotify.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="Podcast">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                 <path
                   d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" />
@@ -692,7 +401,7 @@
         <div class="footer-col">
           <h4>Admin &amp; Portal</h4>
           <ul class="footer-nav-list">
-            <li><a href="index.html#newsletter">Subscribe to Drops</a></li>
+            <li><a href="javascript:void(0)" onclick="openSearchModal()">Quick Search</a></li>
             <li><a href="javascript:void(0)" id="btnOpenAdminLogin">
               <span>Admin Login</span>
               <svg class="icon icon-lock" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px;" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
@@ -704,22 +413,287 @@
       </div>
 
       <div class="footer-bottom">
-        <p class="copyright">
-          &copy; 2026 <strong>LIVE LIT LEAD</strong>. All rights reserved. Teachings by Pastor Daniel Olawande.
-        </p>
-        <div class="footer-bottom-links">
-          <span>We are on fire. Built different. Sent to influence.</span>
-          <button class="btn-back-to-top" id="btnBackToTop" title="Back to top" aria-label="Back to top">
-            <svg class="icon icon-arrow-up" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 15-6-6-6 6"/></svg>
-          </button>
-        </div>
+        <div>&copy; 2026 Live Lit Lead. All rights reserved. On Fire. Built Different. Sent to Influence.</div>
+        <button class="back-to-top" id="btnBackToTop" title="Back to top" aria-label="Back to top">
+          <span>Back to top</span>
+          <svg class="icon icon-arrow-up" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 15-6-6-6 6"/></svg>
+        </button>
       </div>
+
     </div>
   </footer>
+
+  <!-- ==========================================================================
+       CINEMA THEATER VIDEO MODAL (Exact match with index.html)
+       ========================================================================== -->
+  <dialog class="video-modal" id="videoModal">
+    <div class="modal-cinema-box">
+
+      <!-- Top modal header -->
+      <div class="modal-header-bar">
+        <div class="modal-header-info">
+          <span class="modal-pillar-chip badge-lead-lit" id="modalPillarChip">Lead Lit</span>
+          <span class="modal-series-name" id="modalSeriesName">Kingdom Leadership & Influence</span>
+        </div>
+        <button class="btn-close-modal" id="btnCloseModal" title="Close (Esc)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- YouTube Iframe 16:9 Player Container -->
+      <div class="modal-player-wrap">
+        <iframe id="modalYoutubeIframe" src="" title="Live Lit Lead YouTube Video Player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+
+      <!-- Video Details & Tabs Below Player -->
+      <div class="modal-body-content">
+
+        <h2 class="modal-video-title" id="modalVideoTitle">Leadership Before Title</h2>
+
+        <div class="modal-video-meta">
+          <div class="meta-left">
+            <span id="modalVideoDate">Week 28, 2026</span>
+            <span>&bull;</span>
+            <span id="modalVideoDuration">24:44</span>
+            <span>&bull;</span>
+            <span id="modalVideoScripture" class="scripture-chip">
+              <svg class="icon icon-book" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              <span>Mark 10:42-45</span>
+            </span>
+          </div>
+          <div class="meta-right">
+            <button class="btn-modal-action" id="btnShareVideo">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="18" cy="5" r="3"></circle>
+                <circle cx="6" cy="12" r="3"></circle>
+                <circle cx="18" cy="19" r="3"></circle>
+                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+              </svg>
+              <span>Share</span>
+            </button>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="btn-modal-action primary-yt" id="modalYtLink">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+              <span>Watch on YouTube</span>
+              <svg class="icon icon-right" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <p id="modalVideoDesc" style="color: var(--text-secondary); line-height: 1.6; font-size: 0.98rem;"></p>
+
+        <!-- Interactive Tabs (BibleProject Style Study Notes) -->
+        <div class="modal-tabs">
+          <button class="modal-tab-btn active" id="tabBtnNotes" data-modal-tab="notes">
+            <svg class="icon icon-book" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            <span>Study Notes &amp; Scriptures</span>
+          </button>
+          <button class="modal-tab-btn" id="tabBtnPlaylist" data-modal-tab="playlist">
+            <svg class="icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="15" x="2" y="7" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></svg>
+            <span>Up Next In Series</span>
+          </button>
+        </div>
+
+        <!-- Tab 1: Study Notes -->
+        <div class="modal-tab-panel active" id="tabPanelNotes">
+          <div class="study-notes-block">
+
+            <div>
+              <h4 class="study-section-title">Key Spiritual Takeaways</h4>
+              <ul class="takeaways-list" id="modalTakeawaysList">
+                <!-- Dynamically populated -->
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="study-section-title">Scripture References</h4>
+              <div id="modalScripturesContainer">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
+
+            <div class="lit-challenge-box">
+              <h4 style="display: flex; align-items: center; gap: 8px;">
+                <svg class="icon icon-fire" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+                <span>The Lit Challenge for This Week</span>
+              </h4>
+              <p id="modalChallengeText"></p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Tab 2: Up Next Playlist -->
+        <div class="modal-tab-panel" id="tabPanelPlaylist">
+          <div class="playlist-grid" id="modalPlaylistContainer">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </dialog>
+
+  <!-- ==========================================================================
+       ADMIN PASSCODE AUTHENTICATION MODAL
+       ========================================================================== -->
+  <dialog class="add-video-modal" id="adminLoginModal">
+    <div class="add-modal-box" style="max-width: 440px;">
+
+      <div class="add-modal-header">
+        <h3 class="add-modal-title">Admin Authentication</h3>
+        <button class="btn-close-modal" id="btnCloseAdminLoginModal" title="Close">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <form id="adminLoginForm" class="add-form">
+        <div class="form-group">
+          <label for="adminPasscodeInput">Enter Admin PIN or Passcode</label>
+          <input type="password" id="adminPasscodeInput" class="form-input" placeholder="Enter PIN (Default: 777)"
+            required autofocus>
+          <span style="font-size: 0.76rem; color: var(--text-muted);">Only administrators can integrate or manage
+            YouTube video links.</span>
+        </div>
+        <div class="add-form-actions">
+          <button type="button" class="btn-secondary" id="btnCancelAdminLogin">Cancel</button>
+          <button type="submit" class="btn-primary-play" style="padding: 10px 22px;">
+            <span>Unlock Admin Access</span>
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </dialog>
+
+  <!-- ==========================================================================
+       ADD YOUTUBE VIDEO MODAL (Accessible ONLY for Authenticated Admin)
+       ========================================================================== -->
+  <dialog class="add-video-modal" id="addVideoModal">
+    <div class="add-modal-box">
+
+      <div class="add-modal-header">
+        <h3 class="add-modal-title">Admin: Integrate a YouTube Video</h3>
+        <button class="btn-close-modal" id="btnCloseAddModal" title="Close">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <form class="add-form" id="addVideoForm">
+
+        <div class="form-group">
+          <label for="inputYtUrl">YouTube Video Link or ID *</label>
+          <input type="text" id="inputYtUrl" class="form-input"
+            placeholder="Paste link: https://www.youtube.com/watch?v=... or https://youtu.be/..." required>
+          <span style="font-size: 0.75rem; color: var(--text-muted);">Supports standard YouTube links, Shorts,
+            playlists, or 11-digit Video IDs.</span>
+        </div>
+
+        <!-- Live Thumbnail Preview -->
+        <div class="form-group">
+          <label>Video Thumbnail Preview</label>
+          <div class="preview-thumb-box" id="previewThumbBox">
+            <span class="preview-placeholder-text" id="previewPlaceholderText">Paste a valid YouTube link above to
+              preview thumbnail</span>
+            <img src="" alt="Thumbnail Preview" id="previewThumbImg">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputVideoTitle">Teaching Title *</label>
+          <input type="text" id="inputVideoTitle" class="form-input" placeholder="e.g. Walking in Supernatural Zeal"
+            required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="selectPillar">Core Pillar *</label>
+            <select id="selectPillar" class="form-select" required>
+              <option value="live-lit">Live Lit (Spiritual Fire & Prayer)</option>
+              <option value="build-lit">Build Lit (Mind Renewal & Doctrine)</option>
+              <option value="lead-lit">Lead Lit (Marketplace & Influence)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="inputSeries">Series Name</label>
+            <input type="text" id="inputSeries" class="form-input" placeholder="e.g. Altar Fire & The Secret Place">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="inputDuration">Duration (MM:SS)</label>
+            <input type="text" id="inputDuration" class="form-input" placeholder="e.g. 28:30">
+          </div>
+          <div class="form-group">
+            <label for="inputScripture">Primary Scripture</label>
+            <input type="text" id="inputScripture" class="form-input" placeholder="e.g. Romans 12:1-2">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputDesc">Description & Summary</label>
+          <textarea id="inputDesc" class="form-textarea" rows="3"
+            placeholder="Brief summary of what believers will learn from this teaching..."></textarea>
+        </div>
+
+        <div class="add-form-actions">
+          <button type="button" class="btn-secondary" id="btnCancelAddModal">Cancel</button>
+          <button type="submit" class="btn-primary-play" style="padding: 10px 24px;">
+            <span>Add Video to Website</span>
+          </button>
+        </div>
+
+      </form>
+
+    </div>
+  </dialog>
+
+  <!-- Quick Search Modal (Ctrl+K or /) -->
+  <dialog class="add-video-modal" id="searchModal">
+    <div class="add-modal-box" style="max-width: 540px;">
+      <div class="add-modal-header" style="margin-bottom: 16px;">
+        <h3 class="add-modal-title">Quick Search Teachings</h3>
+        <button class="btn-close-modal" id="btnCloseSearchModal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="form-group">
+        <input type="text" id="modalSearchInput" class="form-input" placeholder="Type a topic, scripture, or pillar..."
+          autofocus>
+      </div>
+      <div id="modalSearchResults"
+        style="max-height: 320px; overflow-y: auto; margin-top: 14px; display: flex; flex-direction: column; gap: 8px;">
+        <!-- Dynamically populated results -->
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
 
   <!-- Scripts -->
   <script src="js/videos.js"></script>
   <script src="js/app.js"></script>
+
 </body>
 
 </html>
