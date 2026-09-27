@@ -642,6 +642,33 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("btnBackToTop")?.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
+
+    // Mobile Navigation Drawer Toggle
+    const mobileNavDrawer = document.getElementById("mobileNavDrawer");
+    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+    const btnCloseMobileNav = document.getElementById("btnCloseMobileNav");
+    const mobileNavBackdrop = document.getElementById("mobileNavBackdrop");
+
+    function openMobileNav() {
+      mobileNavDrawer?.classList.add("open");
+      mobileNavDrawer?.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeMobileNav() {
+      mobileNavDrawer?.classList.remove("open");
+      mobileNavDrawer?.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    mobileMenuBtn?.addEventListener("click", openMobileNav);
+    btnCloseMobileNav?.addEventListener("click", closeMobileNav);
+    mobileNavBackdrop?.addEventListener("click", closeMobileNav);
+
+    // Close mobile drawer when any link inside is tapped
+    mobileNavDrawer?.querySelectorAll(".mobile-nav-item, .btn-mobile-youtube").forEach(link => {
+      link.addEventListener("click", closeMobileNav);
+    });
   }
 
   function openSearchModal() {
