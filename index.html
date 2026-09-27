@@ -206,7 +206,7 @@
             <span>Watch Latest Teaching</span>
           </button>
           <a href="#videos" class="btn-secondary">
-            <span>Explore All 28 Teachings</span>
+            <span>Explore Teachings</span>
             <svg class="icon icon-arrow-down" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
           </a>
         </div>
@@ -430,7 +430,7 @@
           <div class="explorer-headings">
             <div class="section-badge">
               <svg class="icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="15" x="2" y="7" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></svg>
-              <span>Complete Library</span>
+              <span>Featured Teachings</span>
             </div>
             <h2>Explore Teachings & Series</h2>
             <p>Watch our weekly video teachings on the website with integrated study notes, scriptures, and actionable
@@ -518,9 +518,18 @@
 
       </div>
 
-      <!-- Video Cards Grid -->
-      <div class="video-grid" id="videoGrid">
+      <!-- Video Cards Grid (9 Videos on Homepage) -->
+      <div class="video-grid" id="videoGrid" data-limit="9">
         <!-- Rendered dynamically by js/app.js -->
+      </div>
+
+      <!-- See More Videos CTA Banner -->
+      <div class="see-more-videos-wrap" id="seeMoreVideosWrap">
+        <a href="videos.html" class="btn-see-more-videos" id="btnSeeMoreVideos">
+          <span>See More Videos</span>
+          <svg class="icon icon-right" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <p class="see-more-note">Explore all 28+ full-length spiritual teachings, study notes, and series playlists</p>
       </div>
 
     </div>
@@ -798,10 +807,10 @@
         <div class="footer-col">
           <h4>Watch & Learn</h4>
           <ul class="footer-nav-list">
-            <li><a href="#videos" data-pillar-filter="all">All Teachings (28)</a></li>
-            <li><a href="#videos" data-pillar-filter="live-lit">Live Lit Series</a></li>
-            <li><a href="#videos" data-pillar-filter="build-lit">Build Lit Series</a></li>
-            <li><a href="#videos" data-pillar-filter="lead-lit">Lead Lit Series</a></li>
+            <li><a href="videos.html">All Teachings (28)</a></li>
+            <li><a href="videos.html?pillar=live-lit">Live Lit Series</a></li>
+            <li><a href="videos.html?pillar=build-lit">Build Lit Series</a></li>
+            <li><a href="videos.html?pillar=lead-lit">Lead Lit Series</a></li>
             <li><a href="#series">Featured Playlists</a></li>
           </ul>
         </div>

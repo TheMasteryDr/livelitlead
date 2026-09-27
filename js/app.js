@@ -81,9 +81,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function initApp() {
     checkAdminStatus();
+    readUrlParams();
     renderVideoGrid();
     setupEventListeners();
     setupKeyboardShortcuts();
+    checkInitialVideoParam();
+  }
+
+  function readUrlParams() {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has("pillar")) {
+      const p = urlParams.get("pillar");
+      if (["live-lit", "build-lit", "lead-lit", "all"].includes(p)) {
+        currentPillar = p;
+        pillarTabs?.querySelectorAll(".pillar-tab-btn").forEach(btn => {
+          btn.classList.toggle("active", btn.getAttribute("data-pillar") === p);
+        });
+      }
+    }
+    if (urlParams.has("series")) {
+      const s = urlParams.get("series");
+      currentSeries = s;
+      if (seriesFilterSelect) {
+        seriesFilterSelect.value = s;
+      }
+    }
+    if (urlParams.has("search")) {
+      const q = urlParams.get("search");
+      searchQuery = q;
+      if (videoSearchInput) {
+        videoSearchInput.value = q;
+        searchClearBtn?.classList.add("visible");
+      }
+    }
+  }
+
+  function checkInitialVideoParam() {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has("video")) {
+      const vidId = urlParams.get("video");
+      setTimeout(() => openVideoPlayer(vidId), 250);
+    }
   }
 
   /**
@@ -175,7 +213,10 @@ document.addEventListener("DOMContentLoaded", () => {
    */
   function renderVideoGrid() {
     const filtered = getFilteredVideos();
-    videoCountDisplay.innerHTML = `Showing <strong>${filtered.length}</strong> spiritual ${filtered.length === 1 ? 'teaching' : 'teachings'}`;
+    const limitAttr = videoGrid.getAttribute("data-limit");
+    const limit = limitAttr ? parseInt(limitAttr, 10) : null;
+    const seeMoreWrap = document.getElementById("seeMoreVideosWrap");
+    const btnSeeMore = document.getElementById("btnSeeMoreVideos");
 
     // Show/hide reset button
     const hasActiveFilters = currentPillar !== "all" || currentSeries !== "all" || searchQuery.trim() !== "";
@@ -186,6 +227,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (filtered.length === 0) {
+      videoCountDisplay.innerHTML = `Showing <strong>0</strong> spiritual teachings`;
+      if (seeMoreWrap) seeMoreWrap.style.display = "none";
       videoGrid.innerHTML = `
         <div class="video-empty-state">
           <div class="empty-icon">
@@ -198,7 +241,39 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    videoGrid.innerHTML = filtered.map(video => {
+    const displayVideos = limit ? filtered.slice(0, limit) : filtered;
+
+    if (limit && filtered.length > limit) {
+      videoCountDisplay.innerHTML = `Showing <strong>${displayVideos.length}</strong> of <strong>${filtered.length}</strong> spiritual teachings`;
+      if (seeMoreWrap) {
+        seeMoreWrap.style.display = "flex";
+        if (btnSeeMore) {
+          let targetUrl = "videos.html";
+          const params = [];
+          if (currentPillar !== "all") params.push(`pillar=${encodeURIComponent(currentPillar)}`);
+          if (currentSeries !== "all") params.push(`series=${encodeURIComponent(currentSeries)}`);
+          if (searchQuery.trim() !== "") params.push(`search=${encodeURIComponent(searchQuery.trim())}`);
+          if (params.length > 0) targetUrl += `?${params.join("&")}`;
+          btnSeeMore.href = targetUrl;
+        }
+      }
+    } else {
+      videoCountDisplay.innerHTML = `Showing <strong>${filtered.length}</strong> spiritual ${filtered.length === 1 ? 'teaching' : 'teachings'}`;
+      if (seeMoreWrap) {
+        if (limit) {
+          seeMoreWrap.style.display = "flex";
+          let targetUrl = "videos.html";
+          const params = [];
+          if (currentPillar !== "all") params.push(`pillar=${encodeURIComponent(currentPillar)}`);
+          if (params.length > 0) targetUrl += `?${params.join("&")}`;
+          btnSeeMore.href = targetUrl;
+        } else {
+          seeMoreWrap.style.display = "none";
+        }
+      }
+    }
+
+    videoGrid.innerHTML = displayVideos.map(video => {
       const badgeClass = `badge-${video.pillar}`;
       const thumbUrl = window.LLLVideos.getYouTubeThumbnail(video.youtubeId);
 
