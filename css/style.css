@@ -132,6 +132,114 @@ img {
 }
 
 /* ==========================================================================
+   MODERN SVG ICON ARCHITECTURE (Lucide Design System)
+   ========================================================================== */
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  transition: transform var(--transition-fast), color var(--transition-fast), stroke var(--transition-fast);
+}
+
+.icon-fire {
+  color: var(--brand-orange);
+  stroke: var(--brand-orange);
+  filter: drop-shadow(0 0 5px rgba(255, 107, 53, 0.45));
+}
+
+.icon-shield {
+  color: var(--pillar-build);
+  stroke: var(--pillar-build);
+}
+
+.icon-crown {
+  color: var(--pillar-lead);
+  stroke: var(--pillar-lead);
+}
+
+.icon-book {
+  color: var(--brand-orange);
+}
+
+.icon-right {
+  margin-left: 6px;
+  transition: transform var(--transition-fast);
+}
+
+a:hover .icon-right,
+button:hover .icon-right {
+  transform: translateX(3px);
+}
+
+.btn-secondary:hover .icon-arrow-down {
+  transform: translateY(3px);
+}
+
+.back-to-top:hover .icon-arrow-up {
+  transform: translateY(-3px);
+}
+
+.spotlight-badge,
+.series-pill,
+.badge-fire,
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pillar-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mobile-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.modal-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.video-scripture {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.video-watch-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.resource-download-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.verse-ref {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.play-circle svg {
+  margin-left: 2px;
+}
+
+/* ==========================================================================
    TOP ANNOUNCEMENT BAR
    ========================================================================== */
 .announcement-bar {
@@ -1180,13 +1288,23 @@ img {
   top: 50%;
   transform: translateY(-50%);
   color: var(--text-muted);
-  font-size: 0.9rem;
+  width: 20px;
+  height: 20px;
   display: none;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+  border-radius: 50%;
+  transition: color var(--transition-fast), background var(--transition-fast);
+}
+
+.search-clear:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .search-clear.visible {
-  display: block;
+  display: flex;
 }
 
 /* Secondary filters (Series & Sort) */
@@ -1230,6 +1348,9 @@ img {
   transform: translateY(-50%);
   color: var(--text-muted);
   pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Pillar Tabs Filter (BibleProject category pills) */

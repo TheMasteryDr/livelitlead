@@ -188,7 +188,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (filtered.length === 0) {
       videoGrid.innerHTML = `
         <div class="video-empty-state">
-          <div class="empty-icon">&#128269;</div>
+          <div class="empty-icon">
+            <svg class="icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </div>
           <h3 class="empty-title">No teachings found</h3>
           <p class="empty-desc">No video matches your search. Try clearing filters to see all 28 Lit Episodes.</p>
         </div>
@@ -220,8 +222,14 @@ document.addEventListener("DOMContentLoaded", () => {
             <h3 class="video-title">${escapeHtml(video.title)}</h3>
             <p class="video-excerpt">${escapeHtml(video.description)}</p>
             <div class="video-meta-footer">
-              <span class="video-scripture">📖 ${escapeHtml(video.scripture)}</span>
-              <span class="video-watch-link">Watch Teaching &rarr;</span>
+              <span class="video-scripture">
+                <svg class="icon icon-book" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                <span>${escapeHtml(video.scripture)}</span>
+              </span>
+              <span class="video-watch-link">
+                <span>Watch Teaching</span>
+                <svg class="icon icon-right" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </span>
             </div>
           </div>
         </article>
@@ -264,8 +272,10 @@ document.addEventListener("DOMContentLoaded", () => {
     modalSeriesName.textContent = video.series + (video.seriesEp ? ` • ${video.seriesEp}` : '');
     modalVideoTitle.textContent = video.title;
     modalVideoDate.textContent = video.date || "Lit Episode";
-    modalVideoDuration.textContent = video.duration;
-    modalVideoScripture.textContent = `📖 ${video.scripture}`;
+    modalVideoScripture.innerHTML = `
+      <svg class="icon icon-book" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      <span>${escapeHtml(video.scripture)}</span>
+    `;
     modalVideoDesc.textContent = video.description;
 
     // External YouTube Link
@@ -274,14 +284,19 @@ document.addEventListener("DOMContentLoaded", () => {
     // Study Notes Tab Populate
     modalTakeawaysList.innerHTML = (video.takeaways || []).map(item => `
       <li>
-        <span class="bullet">&#9670;</span>
+        <span class="bullet" style="color: var(--brand-orange); display: inline-flex; align-items: center;">
+          <svg class="icon" width="8" height="8" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><circle cx="12" cy="12" r="6"/></svg>
+        </span>
         <span>${escapeHtml(item)}</span>
       </li>
     `).join("");
 
     modalScripturesContainer.innerHTML = (video.scripturesList || []).map(s => `
       <div class="scripture-card-box">
-        <div class="verse-ref">📖 ${escapeHtml(s.ref)}</div>
+        <div class="verse-ref">
+          <svg class="icon icon-book" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          <span>${escapeHtml(s.ref)}</span>
+        </div>
         <div class="verse-text">"${escapeHtml(s.text)}"</div>
       </div>
     `).join("");
@@ -299,7 +314,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
         <div class="playlist-info">
           <h5>${escapeHtml(p.title)}</h5>
-          <p>${escapeHtml(p.pillarLabel)} • 📖 ${escapeHtml(p.scripture)}</p>
+          <p>${escapeHtml(p.pillarLabel)} • <span style="display:inline-flex; align-items:center; gap:3px;"><svg class="icon icon-book" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg> ${escapeHtml(p.scripture)}</span></p>
         </div>
         <span class="playlist-duration">${p.duration}</span>
       </div>
@@ -512,7 +527,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     btnAdminLogout?.addEventListener("click", () => {
       setAdminMode(false);
-      showToast("🔒 Logged out of Admin Mode.");
+      showToast("Logged out of Admin Mode.");
     });
 
     // Add Video Modal (Admin)
@@ -574,7 +589,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Scroll to videos section and show toast
       document.getElementById("videos").scrollIntoView({ behavior: "smooth" });
-      showToast(`🔥 "${title}" was successfully added to your library!`);
+      showToast(`"${title}" was successfully added to your library!`);
     });
 
     // Quick Search Modal
@@ -607,7 +622,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
           <div class="playlist-info">
             <h5 style="font-size: 0.88rem;">${escapeHtml(m.title)}</h5>
-            <p style="font-size: 0.72rem;">${m.pillarLabel} • 📖 ${escapeHtml(m.scripture)}</p>
+            <p style="font-size: 0.72rem; display: flex; align-items: center; gap: 4px; flex-wrap: wrap;">${m.pillarLabel} • <svg class="icon icon-book" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg> <span>${escapeHtml(m.scripture)}</span></p>
           </div>
         </div>
       `).join("");
@@ -625,7 +640,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("newsletterForm")?.addEventListener("submit", (e) => {
       e.preventDefault();
       const email = document.getElementById("newsletterEmail").value;
-      showToast(`🔥 Thank you! ${email} has been subscribed to the weekly drop.`);
+      showToast(`Thank you! ${email} has been subscribed to the weekly drop.`);
       document.getElementById("newsletterEmail").value = "";
     });
 
@@ -724,7 +739,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const toast = document.createElement("div");
     toast.className = "toast";
     toast.innerHTML = `
-      <span>🔥</span>
+      <svg class="icon icon-fire" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
       <span>${escapeHtml(message)}</span>
     `;
     toastContainer.appendChild(toast);
