@@ -146,8 +146,18 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
   letter-spacing: 0.02em;
+}
+
+.announcement-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 .announcement-bar .badge-fire {
