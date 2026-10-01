@@ -240,52 +240,149 @@ button:hover .icon-right {
 }
 
 /* ==========================================================================
-   TOP ANNOUNCEMENT BAR
+   TOP ANNOUNCEMENT BAR (MOVING TICKER / MARQUEE)
    ========================================================================== */
 .announcement-bar {
   background: linear-gradient(90deg, #C93E10 0%, #E8501E 50%, #FF6B35 100%);
   color: #FFFFFF;
-  padding: 10px 20px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-align: center;
+  height: 42px;
   position: relative;
   z-index: 50;
   display: flex;
   align-items: center;
-  justify-content: center;
+  overflow: hidden;
   letter-spacing: 0.02em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  user-select: none;
 }
 
-.announcement-inner {
+/* Gradient edge mask to smoothly fade in/out at viewport edges */
+.announcement-bar .marquee-wrapper {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  mask-image: linear-gradient(90deg, transparent 0%, #000 32px, #000 calc(100% - 32px), transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 32px, #000 calc(100% - 32px), transparent 100%);
+}
+
+.announcement-bar .marquee-track {
   display: flex;
   align-items: center;
-  justify-content: center;
+  width: max-content;
+  flex-shrink: 0;
+  animation: marquee-scroll 32s linear infinite;
+  will-change: transform;
+}
+
+/* Pause on hover, active touch, or keyboard focus for effortless reading & clicking */
+.announcement-bar:hover .marquee-track,
+.announcement-bar:active .marquee-track,
+.announcement-bar:focus-within .marquee-track,
+.announcement-bar.is-paused .marquee-track {
+  animation-play-state: paused;
+}
+
+.announcement-bar .marquee-group {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.announcement-bar .announcement-item {
+  display: inline-flex;
+  align-items: center;
   gap: 12px;
-  flex-wrap: wrap;
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
+  padding: 0 16px;
+  white-space: nowrap;
+  font-size: 0.85rem;
+  font-weight: 600;
 }
 
 .announcement-bar .badge-fire {
-  background: rgba(0, 0, 0, 0.25);
-  padding: 3px 8px;
-  border-radius: var(--radius-pill);
-  font-size: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: 3px 9px;
+  border-radius: var(--radius-pill, 9999px);
+  font-size: 0.72rem;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  color: #FFF;
 }
 
-.announcement-bar a {
+.announcement-bar .badge-fire .icon-fire {
+  color: #FFA500;
+  filter: drop-shadow(0 0 2px rgba(255, 165, 0, 0.6));
+}
+
+.announcement-bar .announcement-text {
+  color: #FFFFFF;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.announcement-bar .announcement-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #FFFFFF;
+  font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 3px;
-  font-weight: 700;
-  transition: opacity var(--transition-fast);
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-.announcement-bar a:hover {
-  opacity: 0.85;
+.announcement-bar .announcement-link:hover {
+  opacity: 0.9;
+  text-decoration-color: #FFA500;
+}
+
+.announcement-bar .announcement-link .icon-right {
+  transition: transform 0.2s ease;
+}
+
+.announcement-bar .announcement-link:hover .icon-right {
+  transform: translateX(3px);
+}
+
+.announcement-bar .marquee-separator {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.75rem;
+  padding: 0 8px;
+  user-select: none;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* Accessibility: respect user prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .announcement-bar .marquee-track {
+    animation: none;
+    transform: none;
+  }
+  .announcement-bar .marquee-wrapper {
+    overflow-x: auto;
+    mask-image: none;
+    -webkit-mask-image: none;
+    scrollbar-width: none;
+  }
+  .announcement-bar .marquee-wrapper::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 /* ==========================================================================
@@ -2712,45 +2809,30 @@ button:hover .icon-right {
     --header-height: 64px;
   }
 
-  /* Top Announcement Bar: Perfectly Aligned & Centered on Mobile */
+  /* Top Announcement Bar: Responsive moving ticker on tablets and mobile */
   .announcement-bar {
-    padding: 10px 16px;
-    font-size: 0.8rem;
-    line-height: 1.45;
+    height: 38px;
+    padding: 0;
   }
 
-  .announcement-inner {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 6px;
+  .announcement-bar .announcement-item {
+    gap: 8px;
+    padding: 0 12px;
+    font-size: 0.78rem;
   }
 
   .announcement-bar .badge-fire {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.72rem;
-    padding: 2px 10px;
-    letter-spacing: 0.05em;
+    font-size: 0.68rem;
+    padding: 2px 7px;
   }
 
-  .announcement-text {
-    font-size: 0.78rem;
-    line-height: 1.4;
-    text-align: center;
-    max-width: 100%;
-    margin: 0;
+  .announcement-bar .marquee-wrapper {
+    mask-image: linear-gradient(90deg, transparent 0%, #000 16px, #000 calc(100% - 16px), transparent 100%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 16px, #000 calc(100% - 16px), transparent 100%);
   }
 
-  .announcement-bar a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8rem;
-    font-weight: 700;
-    margin-top: 2px;
+  .announcement-bar .marquee-track {
+    animation-duration: 28s;
   }
 
   /* Header on Mobile: Remove YouTube Channel button and optimize spacing */
@@ -2817,19 +2899,29 @@ button:hover .icon-right {
 
 @media (max-width: 480px) {
   .announcement-bar {
-    padding: 8px 12px;
+    height: 36px;
+    padding: 0;
   }
 
-  .announcement-inner {
-    gap: 4px;
+  .announcement-bar .announcement-item {
+    gap: 7px;
+    padding: 0 10px;
+    font-size: 0.73rem;
   }
 
-  .announcement-text {
+  .announcement-bar .badge-fire {
+    font-size: 0.65rem;
+    padding: 2px 6px;
+    gap: 3px;
+  }
+
+  .announcement-bar .announcement-link {
     font-size: 0.74rem;
   }
 
-  .announcement-bar a {
-    font-size: 0.76rem;
+  .announcement-bar .marquee-separator {
+    padding: 0 4px;
+    font-size: 0.65rem;
   }
 
   .brand-icon {
