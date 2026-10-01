@@ -6,6 +6,43 @@
 
 const DEFAULT_VIDEOS = [
   {
+    "id": "lll-yt-029",
+    "youtubeId": "cSexrwH2sb4",
+    "title": "Influence in Your Sphere",
+    "pillar": "lead-lit",
+    "pillarLabel": "Lead Lit",
+    "pillarColor": "#FFA000",
+    "series": "Kingdom Leadership & Influence",
+    "seriesEp": "Lit Episode 29",
+    "duration": "43:43",
+    "date": "Week 29, 2026",
+    "scripture": "Matthew 5:14-16",
+    "description": "A high-impact apostolic teaching by Pastor Daniel Olawande on breaking into and dominating your sphere of influence. Learn how to transform cultural domains, manifest Kingdom excellence, and lead lit as an undeniable light in the marketplace.",
+    "takeaways": [
+      "You were not saved to blend into society; you were anointed to command influence and bring godly governance to your sphere.",
+      "Spiritual authority must be coupled with professional excellence to capture the gates of culture and industry.",
+      "When God places a fire on your altar, your light cannot be hidden—it is meant to illuminate systems and draw nations to Christ."
+    ],
+    "scripturesList": [
+      {
+        "ref": "Matthew 5:14-16",
+        "text": "You are the light of the world. A city that is set on a hill cannot be hidden... Let your light so shine before men, that they may see your good works and glorify your Father in heaven."
+      },
+      {
+        "ref": "Daniel 1:17-20",
+        "text": "God gave them knowledge and skill in all learning and wisdom... In all matters of wisdom and understanding, the king found them ten times better than all."
+      },
+      {
+        "ref": "Proverbs 22:29",
+        "text": "Do you see a man skillful in his work? He will stand before kings; he will not stand before obscure men."
+      }
+    ],
+    "challenge": "Map out your primary sphere of influence (workplace, industry, campus, or community). Identify one bold Kingdom initiative or standard of excellence you will establish this week.",
+    "featured": true,
+    "views": "62K",
+    "custom": false
+  },
+  {
     "id": "lll-yt-001",
     "youtubeId": "moUvlAkEhxg",
     "title": "Leadership Before Title",
@@ -34,7 +71,7 @@ const DEFAULT_VIDEOS = [
       }
     ],
     "challenge": "Identify one area where you can serve without recognition this week. Lead through honor, excellence, and submission.",
-    "featured": true,
+    "featured": false,
     "views": "57K",
     "custom": false
   },
@@ -931,7 +968,7 @@ const DEFAULT_VIDEOS = [
   }
 ];
 
-const STORAGE_KEY = "live_lit_lead_videos_v2";
+const STORAGE_KEY = "live_lit_lead_videos_v3";
 
 /**
  * Extracts a YouTube Video ID from any YouTube URL format.

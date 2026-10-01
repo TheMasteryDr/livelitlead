@@ -235,7 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <svg class="icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
           </div>
           <h3 class="empty-title">No teachings found</h3>
-          <p class="empty-desc">No video matches your search. Try clearing filters to see all 28 Lit Episodes.</p>
+          <p class="empty-desc">No video matches your search. Try clearing filters to see all 29 Lit Episodes.</p>
         </div>
       `;
       return;
@@ -532,11 +532,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Hero buttons
     document.getElementById("heroPlayBtn")?.addEventListener("click", () => {
-      openVideoPlayer("lll-yt-001");
+      const vid = document.getElementById("heroPlayBtn").getAttribute("data-video-id") || "lll-yt-029";
+      openVideoPlayer(vid);
     });
 
     document.getElementById("heroSpotlightCard")?.addEventListener("click", () => {
-      openVideoPlayer("lll-yt-001");
+      const vid = document.getElementById("heroSpotlightCard").getAttribute("data-video-id") || "lll-yt-029";
+      openVideoPlayer(vid);
     });
 
     document.getElementById("btnStartSeries")?.addEventListener("click", () => {
